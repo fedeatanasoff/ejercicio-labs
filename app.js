@@ -23,7 +23,7 @@ function suma( array ){
         return ordenados[0]
     } else {
         console.log(`no se encontraron numeros positivos en el array ingresado`)
-        return -1
+        return 0
     }
 }
 
