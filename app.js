@@ -1,26 +1,26 @@
-// CASOS DE USO 
+// CASOS DE USO
 let arrayConPositivos = [2, 7, -1, 9, -3, 0, 4]
 let arrayUnPositivo = [2, -7, -1, -9, -3, 0, -4]
 let arrayNegativo = [-2, -7, -1, -9, -3, 0, -4]
 
 
 
-// FUNCION QUE DEVUELVE LA SUMA DE LOS PRIMEROS DOS NUMEROS DEL ARRAY 
+// FUNCION QUE DEVUELVE LA SUMA DE LOS PRIMEROS DOS NUMEROS DEL ARRAY
 // CONTROL PARA CASOS DONDE SOLO HAYA 1 ELEMENTO O NINGUNO
 function suma( array ){
 
-    // PRIMERO FILTRO LOS ELEMENTOS POSITIVOS DEL ARRAY CREANDO UNO NUEVO
-    let positivos = array.filter( numero => numero > 0)
+    // PRIMERO ORDENO EL ARRAY CON LOS NUMEROS POSITIVOS
+    let ordenados = array.sort( (num1, num2) => num1 - num2)
 
-    // ORDENO EL ARRAY CON LOS NUMEROS POSITIVOS
-    let ordenados = positivos.sort( (num1, num2) => num1 - num2)
+    // FILTRO LOS ELEMENTOS POSITIVOS DEL ARRAY CREANDO UNO NUEVO
+    let positivos = ordenados.filter( numero => numero > 0)
 
-    if (ordenados.length >= 2) {
-        console.log(`sumando ${ordenados[0]} + ${ordenados[1]}`)
-        return ordenados[0] + ordenados[1]
-    } else if (ordenados.length === 1) {
-        console.log(`solo se encontro 1 solo elemento positivo: ${ordenados[0]}`)
-        return ordenados[0]
+    if (positivos.length >= 2) {
+        console.log(`sumando ${positivos[0]} + ${positivos[1]}`)
+        return positivos[0] + positivos[1]
+    } else if (positivos.length === 1) {
+        console.log(`solo se encontro 1 solo elemento positivo: ${positivos[0]}`)
+        return positivos[0]
     } else {
         console.log(`no se encontraron numeros positivos en el array ingresado`)
         return 0
